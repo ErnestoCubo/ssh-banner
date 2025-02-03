@@ -18,7 +18,7 @@ DISK=$(df -h / | awk 'NR==2 {print $3 " / " $2}')
 USERS_LOGGED=$(who | wc -l)
 UPTIME=$(uptime -p)
 PROCESSES=$(ps aux --no-headers | wc -l)
-CONTAINERS=$((docker ps | wc -l)-1)
+CONTAINERS=$(($(docker ps | wc -l)-1))
 FAILED_LOGINS=$(journalctl -u ssh --since "1 day ago" | grep -c "Failed password")
 MESSAGES=("Hack the planet!" "Keep it simple, stupid." "Nothing is secure." "Think like an attacker." "Pwned or be pwned.")
 RANDOM_MSG=${MESSAGES[$RANDOM % ${#MESSAGES[@]}]}
