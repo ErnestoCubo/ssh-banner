@@ -1,4 +1,4 @@
-# Shell Script
+# SSH-BANNER
 
 This repository contains a shell script (`sh`) designed to be used as a banner on your ssh server.
 
